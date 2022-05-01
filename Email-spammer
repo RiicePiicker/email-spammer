@@ -1,0 +1,15 @@
+import smtplib
+
+with smtplib.SMTP("smtp.gmail.com", 587) as smtp:
+    smtp.ehlo()
+    smtp.starttls()
+    smtp.ehlo()
+
+    smtp.login("#Your gmail", "#Your gmail's password")
+
+    subject = #subject
+    body = #Text
+
+    msg = f'Subject: {subject} \n\n {body}'
+    for i in range(5000):
+        smtp.sendmail(#sender, #recipient, msg)
